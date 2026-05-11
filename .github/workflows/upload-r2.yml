@@ -15,7 +15,6 @@ concurrency:
 
 jobs:
   upload:
-    runs-on: Stringify-GH-Runner
     steps:
       - name: Checkout
         uses: actions/checkout@v4
