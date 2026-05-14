@@ -1,4 +1,4 @@
-# cdn.strinova.gg
+# cdn.stringify.gg
 
 Static assets served from [cdn.stringify.gg](https://cdn.stringify.gg), used by [Stringify](https://stringify.gg).
 
