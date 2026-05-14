@@ -1,6 +1,6 @@
 # cdn.strinova.gg
 
-Static assets served from [cdn.strinova.gg](https://cdn.strinova.gg), used by [Stringify](https://stringify.gg).
+Static assets served from [cdn.stringify.gg](https://cdn.stringify.gg), used by [Stringify](https://stringify.gg).
 
 This repo exists so the main Stringify repo doesn't have to ship these files. Splitting them out keeps the app repo small and shortens deploy times — asset changes don't trigger an app rebuild, and app changes don't re-upload the CDN.
 
@@ -20,4 +20,4 @@ Manual re-runs are available via the **Run workflow** button on the Actions tab 
 2. Commit and push to `main`.
 3. The workflow will pick up the changes and upload them to R2.
 
-Files become available at `https://cdn.strinova.gg/assets/<path-relative-to-assets>`.
+Files become available at `https://cdn.stringify.gg/assets/<path-relative-to-assets>`.
