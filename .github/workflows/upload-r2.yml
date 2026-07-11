@@ -13,6 +13,9 @@ concurrency:
   group: upload-r2
   cancel-in-progress: false
 
+permissions:
+  contents: read
+
 jobs:
   upload:
     runs-on: ubuntu-latest
