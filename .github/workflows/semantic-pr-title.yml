@@ -1,0 +1,26 @@
+name: Semantic PR title
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions: {}
+
+jobs:
+  validate-title:
+    name: Semantic PR title
+    runs-on: ubuntu-latest
+    env:
+      PR_TITLE: ${{ github.event.pull_request.title }}
+    steps:
+      - name: Validate title
+        shell: bash
+        run: |
+          pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([^()]+\))?!?: [^[:space:]].*$'
+
+          if [[ ! "$PR_TITLE" =~ $pattern ]]; then
+            echo "::error title=Invalid pull request title::Expected '<type>: <subject>' with an optional scope and optional '!'. Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert. Examples: feat: add title checks; feat(PSI-61): enforce semantic PR titles"
+            exit 1
+          fi
+
+          echo "PR title follows the semantic commit message convention."
